@@ -1,11 +1,10 @@
-//this will add a 5% markup to the initial base price.
 
 let basePrice = 0;
 let currentSubtotal = 0;
 let numberOfPeople = 0;
 let category = "";
 
-
+//this will add a 5% markup to the initial base price.
 addBaseMarkup() {
 	currentSubtotal = basePrice * 1.05;
 	console.log(currentSubtotal);
@@ -15,36 +14,42 @@ addBaseMarkup() {
 
 //this is give the total markup based on the number of people working on the job (1.2% for every person) 
 addPersonMarkup() {
-	let personMarkup = numberOfPeople * 1.12;
+	personMarkup = numberOfPeople * 0.012;
 	console.log(personMarkup);
 	return personMarkup;
 }
 
 //this will add the person on the job markup + the category markup. 
 additionalMarkup(){
-	addPersonMarkup();
-	if (category = "pharmacy") {
-		personMarkup = personMarkup + 7.5;
+	console.log(personMarkup);
+	if (category == "pharmacy") {
+		newMarkup = personMarkup + 0.075;
+		console.log(newMarkup);
 	}
 
-	else { if (category = "food") {
-		personMarkup = personMarkup + 13;
+	if (category == "food") {
+		newMarkup = personMarkup + 0.13;
+		console.log(newMarkup);
 	}
 
-	else (category = "electronics") {
-		personMarkup = personMarkup + 2;
+	if (category == "electronics") {
+		newMarkup = personMarkup + 0.02;
+		console.log(newMarkup);
 
-	} }
-	return personMarkup;
+	} 
+	else {
+	return newMarkup;
+	}
 }
-//return newMarkup
+
 
 //this will take the currentSubtotal and apply the newMarkup, whith will return the total price of
 //the job. 
 newTotal() {
-	totalPrice = currentSubtotal*personMarkup;
+	console.log(currentSubtotal * newMarkup);
+	totalPrice = currentSubtotal+currentSubtotal*newMarkup;
+	console.log("total")
 	console.log(totalPrice);
-	// return currentSubtotal;
-
+	return totalPrice;
 }
 
