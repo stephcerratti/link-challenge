@@ -1,10 +1,10 @@
 <script type="text/javascript">
 	
-let basePrice = 1299.99;
+let basePrice = 12456.95;
 let currentSubtotal = 0;
-let numberOfPeople = 3;
+let numberOfPeople = 4;
 let personMarkup = 0;
-let category = "food";
+let category = "";
 
 function addBaseMarkup() {
 	currentSubtotal = basePrice * 1.05;
@@ -40,7 +40,7 @@ function additionalMarkup(){
 		console.log(newMarkup);
 
 	} 
-	else {
+	else { newMarkup = personMarkup;
 	return newMarkup;
 	}
 }
