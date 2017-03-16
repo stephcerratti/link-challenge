@@ -1,8 +1,10 @@
 <script type="text/javascript">
 	
-let basePrice = 20;
+let basePrice = 100;
 let currentSubtotal = 0;
-let numberOfPeople = 8;
+let numberOfPeople = 4;
+let personMarkup = 0;
+let category = "food";
 
 function addBaseMarkup() {
 	let currentSubtotal = basePrice * 1.05;
@@ -20,7 +22,84 @@ function addPersonMarkup() {
 
 addPersonMarkup();
 
-// function
+function additionalMarkup(){
+	console.log("additional markup function")
+	if (category = "pharmacy") {
+		personMarkup = personMarkup + 7.5;
+	}
 
+	if (category = "food") {
+		personMarkup = personMarkup + 13;
+	}
+
+	if (category = "electronics") {
+		personMarkup = personMarkup + 2;
+
+	} 
+	else {
+	return personMarkup;
+	}
+}
+
+
+additionalMarkup();
 
 </script>
+
+<!-- <script type="text/javascript">
+let basePrice = 100;
+let currentSubtotal = 0;
+let numberOfPeople = 4;
+let personMarkup = 0;
+let category = "food";
+addBaseMarkup();
+
+
+function addBaseMarkup() {
+	currentSubtotal = basePrice * 1.05;
+	console.log(currentSubtotal);
+	function addPersonMarkup(){
+		 console.log("i am in the addition markup");
+		function addPersonMarkup(){
+
+			let personMarkup = numberOfPeople * 1.12;
+	console.log(personMarkup);
+
+		};
+	if (category == "pharmacy") {
+		personMarkup = personMarkup + 7.5;
+		return personMarkup;
+		console.log(personMarkup);
+	}
+
+	else { if (category == "food") {
+		personMarkup = personMarkup + 13;
+		return personMarkup;
+		console.log(personMarkup);
+		console.log("i am in the food loop")
+	}
+
+	else {
+		personMarkup = personMarkup + 2;
+		return personMarkup;
+		console.log(personMarkup);
+
+	}; }
+	function newTotal() {
+		totalPrice = currentSubtotal*personMarkup;
+	console.log(totalPrice)
+
+	};
+
+
+	};
+	console.log("i am here after running the second function");
+	
+
+
+};
+</script> -->
+
+
+
+
