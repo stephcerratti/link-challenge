@@ -1,8 +1,24 @@
-var assert = require('assert');
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal(-1, [1,2,3].indexOf(4));
-    });
-  });
-});
+ var chai = require('chai');
+ var assert = chai.assert;
+ var expect = require('chai').expect;
+
+ /***************** ADD BASE MARKUP **************************/
+
+describe('Add base markup', function() {
+ 	it('should return 5% onto the base price', function() {
+ 		var x = 100;
+  		expect(x*1.05).to.be.equal(105);
+  	});
+ });
+
+ /***************** ADD PERSON MARKUP **************************/
+
+ describe('add person markup', function() {
+ 	it('should return 1.2% for each person on the job', function() {
+ 		expect(3*0.012).to.be.equal(0.036);
+ 	});
+ });
+
+
+
+  /***************** ADD CATEGORY MARKUP **************************/

@@ -42,7 +42,6 @@ additionalMarkup(){
 	}
 }
 
-
 //this will take the currentSubtotal and apply the newMarkup, whith will return the total price of
 //the job. 
 newTotal() {

@@ -23,8 +23,6 @@ function addPersonMarkup() {
 addPersonMarkup();
 
 function additionalMarkup(){
-	console.log(personMarkup);
-	console.log("additional markup function");
 	if (category == "pharmacy") {
 		newMarkup = personMarkup + 0.075;
 		console.log(newMarkup);
@@ -51,7 +49,6 @@ console.log(additionalMarkup());
 function newTotal() {
 	console.log(currentSubtotal * newMarkup);
 	totalPrice = currentSubtotal+currentSubtotal*newMarkup;
-	console.log("total")
 	console.log(totalPrice);
 	return totalPrice;
 }
