@@ -47,7 +47,6 @@ additionalMarkup(){
 newTotal() {
 	console.log(currentSubtotal * newMarkup);
 	totalPrice = currentSubtotal+currentSubtotal*newMarkup;
-	console.log("total")
 	console.log(totalPrice);
 	return totalPrice;
 }

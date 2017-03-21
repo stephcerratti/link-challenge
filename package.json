@@ -1,0 +1,26 @@
+{
+  "name": "link-challenge",
+  "version": "1.0.0",
+  "description": "Link Apprenticeship Coding Challenge",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephcerratti/link-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephcerratti/link-challenge/issues"
+  },
+  "homepage": "https://github.com/stephcerratti/link-challenge#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
