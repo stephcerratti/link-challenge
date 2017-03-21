@@ -1,8 +1,14 @@
 
-let basePrice = 0;
-let currentSubtotal = 0;
-let numberOfPeople = 0;
-let category = "";
+class MarkupCalculator {
+	constructor() {
+		this.basePrice = 0;
+		this.currentSubtotal = 0;
+		this.numberOfPeople = 0;
+		this.personMarkup = 0;
+		this.category = "";
+		this.totalPrice = 0;
+		this.additionalMarkup = 0;
+	};
 
 //this will add a 5% markup to the initial base price.
 addBaseMarkup() {
@@ -50,4 +56,6 @@ newTotal() {
 	console.log(totalPrice);
 	return totalPrice;
 }
+}
 
+module.exports = MarkupCalculator;
