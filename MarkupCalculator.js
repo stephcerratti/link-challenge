@@ -1,56 +1,44 @@
 
 class MarkupCalculator {
 	constructor() {
-		this.basePrice = 0;
-		this.currentSubtotal = 0;
 		this.numberOfPeople = 0;
 		this.personMarkup = 0;
 		this.category = "";
-		this.newMarkup = 0;
+		this.categoryMarkup = 0;
 	};
 
-//this will add a 5% markup to the initial base price.
-addBaseMarkup() {
-	this.currentSubtotal = basePrice * 1.05;
-	return this.currentSubtotal;
-}
-//return currentSubtotal to be used by next functions
-
-//this is give the total markup based on the number of people working on the job (1.2% for every person) 
-addPersonMarkup(numberOfPeople) {
-	this.numberOfPeople = numberOfPeople;
-	this.personMarkup = this.numberOfPeople * 0.012;
-	return Number(Math.round(this.personMarkup +'e3') + 'e-3');
+totalMarkup(base, numberOfPeople, category) {
+	let currentSubtotal = base * 1.05;
+	let personMarkup = numberOfPeople * 0.012;
+	let newMarkup = personMarkup + this.additionalMarkup(category);
+	let finalPrice = currentSubtotal * (newMarkup+1);
+	// return Number(Math.round(this.finalPrice +'e3') + 'e-3');
+	return Math.round(finalPrice * 100)/100;	
 }
 
-//this will add the person on the job markup + the category markup. 
 additionalMarkup(category){
 	this.category = category;
 
 	if (this.category == "pharmacy") {
-		this.newMarkup = this.personMarkup + 0.075;
+		this.categoryMarkup = 0.075;
 	}
-
-	if (this.category == "food") {
-		this.newMarkup = this.personMarkup + 0.13;
+	else if (this.category == "food") {
+		this.categoryMarkup = 0.13;
 	}
-
-	if (this.category == "electronics") {
-		this.newMarkup = this.personMarkup + 0.02;
+	else if (this.category == "electronics") {
+		this.categoryMarkup = 0.02;
 	} 
-
-	else {
-	return this.newMarkup;
+	else if (this.category == "") {
+		this.categoryMarkup = 0;
 	}
+		return this.categoryMarkup;
 }
 
-//this will take the currentSubtotal and apply the newMarkup, whith will return the total price of
-//the job. 
-newTotal() {
-	let totalPrice = this.currentSubtotal+this.currentSubtotal*this.newMarkup;
-	console.log(totalPrice);
-	return totalPrice;
+addPersonMarkup(numberOfPeople) {
+	this.personMarkup = numberOfPeople * 0.012;
+	return Number(Math.round(this.personMarkup +'e3') + 'e-3');
 }
+
 }
 
 module.exports = MarkupCalculator;

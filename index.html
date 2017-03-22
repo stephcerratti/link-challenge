@@ -5,10 +5,11 @@ let currentSubtotal = 0;
 let numberOfPeople = 4;
 let personMarkup = 0;
 let category = "";
+let newMarkup = 0;
 
 function addBaseMarkup() {
 	currentSubtotal = basePrice * 1.05;
-	console.log(currentSubtotal);
+	// console.log(currentSubtotal);
 	return currentSubtotal;
 }
 
@@ -16,7 +17,7 @@ addBaseMarkup();
 
 function addPersonMarkup() {
 	personMarkup = numberOfPeople * 0.012;
-	console.log(personMarkup);
+	// console.log(personMarkup);
 	return personMarkup;
 }
 
@@ -25,17 +26,17 @@ addPersonMarkup();
 function additionalMarkup(){
 	if (category == "pharmacy") {
 		newMarkup = personMarkup + 0.075;
-		console.log(newMarkup);
+		// console.log(newMarkup);
 	}
 
 	if (category == "food") {
 		newMarkup = personMarkup + 0.13;
-		console.log(newMarkup);
+		// console.log(newMarkup);
 	}
 
 	if (category == "electronics") {
 		newMarkup = personMarkup + 0.02;
-		console.log(newMarkup);
+		// console.log(newMarkup);
 
 	} 
 	else { newMarkup = personMarkup;
@@ -43,17 +44,50 @@ function additionalMarkup(){
 	}
 }
 
-// var  q = additionalMarkup();
-console.log(additionalMarkup());
+// console.log(additionalMarkup());
 
 function newTotal() {
-	console.log(currentSubtotal * newMarkup);
+	// console.log(currentSubtotal * newMarkup);
 	totalPrice = currentSubtotal+currentSubtotal*newMarkup;
-	console.log(totalPrice);
+	// console.log(totalPrice);
 	return totalPrice;
 }
 
 console.log(newTotal());
+
+function totalMarkup(base, numberOfPeople, category) {
+	let currentSubtotal = base * 1.05;
+	console.log(currentSubtotal);
+	let personMarkup = numberOfPeople * 0.012;
+	console.log(personMarkup);
+	let newMarkup = personMarkup + this.additionalMarkup(category);
+	console.log(newMarkup);
+	let finalPrice = currentSubtotal * (newMarkup+1);
+	console.log(finalPrice);
+	return Math.round(finalPrice * 100)/100;
+	// return Number(Math.round(this.finalPrice +'e3') + 'e-3');
+}
+
+function additionalMarkup(category){
+	this.category = category;
+	if (this.category == "pharmacy") {
+		this.categoryMarkup = 0.075;
+	}
+	if (this.category == "food") {
+		this.categoryMarkup = 0.13;
+	}
+	if (this.category == "electronics") {
+		this.categoryMarkup = 0.02;
+	} 
+	if (this.category == "") {
+		this.categoryMarkup
+	}
+	else {
+		return this.categoryMarkup;
+	}
+}
+
+console.log(totalMarkup(1299.99, 3, 'food'))
 
 </script>
 

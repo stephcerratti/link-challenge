@@ -1,0 +1,11 @@
+This is my finished coding challenge!  It took a lot of work and refactoring, but eventually I came up with a result I am happy with. This coding challenge was also a great learning experience for me, because it forced me to learn how to unit test (through A LOT of trial and error).
+
+I always like to work with logic first, so I ran through the math with a calculator and pen and paper until I was getting the expected outcomes.  For some reason, my outcomes were always a few dollars short, and then I realized a little error I was making with a decimal place when calculating a percentage.
+
+Once I was getting consistent results with the math, I began to build my functions. I had no previous experience with unit testing or using Mocha and Chai, so I had to teach myself how to unit test on top of building working code. Since I didn’t know unit testing, I built my functions before my tests. In retrospect, it would have been a lot easier if I built my tests first then my functions around that, because I had to go back and basically rewrite my entire code, but now I know for next time!
+
+In my index.html file, you can see my initial structure of this challenge.  I wrote in index.html because I thought it would be easier for me to check the validity of my functions in the console.  This actually set me up for big mistakes when it came to unit testing my code in the terminal, but it was a challenge I was able to work through.
+
+MarkupCalculator.js contains my (very worked over) code for the markup calculator.  At first, it looked similar to the code in index.html, but once I began unit testing I realized I had no way to pass any parameters into my functions, since they were too specific and didn't really make sense any more.  I began to do further research and I realized a lot of my code was kind of repetitive.  I then broke down what it was exactly I needed from each function, and which parameters I needed passed from my test file. Then I was able to write much more succinct code. 
+
+I took this coding challenge as a learning opportunity, and am happy to say that now I understand unit testing and writing test-driven development a lot more.  Moving forward, I will definitely try to understand my tests before writing my functions!
