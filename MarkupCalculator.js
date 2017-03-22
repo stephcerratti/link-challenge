@@ -6,53 +6,48 @@ class MarkupCalculator {
 		this.numberOfPeople = 0;
 		this.personMarkup = 0;
 		this.category = "";
-		this.totalPrice = 0;
-		this.additionalMarkup = 0;
+		this.newMarkup = 0;
 	};
 
 //this will add a 5% markup to the initial base price.
 addBaseMarkup() {
-	currentSubtotal = basePrice * 1.05;
-	console.log(currentSubtotal);
-	return currentSubtotal;
+	this.currentSubtotal = basePrice * 1.05;
+	return this.currentSubtotal;
 }
 //return currentSubtotal to be used by next functions
 
 //this is give the total markup based on the number of people working on the job (1.2% for every person) 
-addPersonMarkup() {
-	personMarkup = numberOfPeople * 0.012;
-	console.log(personMarkup);
-	return personMarkup;
+addPersonMarkup(numberOfPeople) {
+	this.numberOfPeople = numberOfPeople;
+	this.personMarkup = this.numberOfPeople * 0.012;
+	return Number(Math.round(this.personMarkup +'e3') + 'e-3');
 }
 
 //this will add the person on the job markup + the category markup. 
-additionalMarkup(){
-	console.log(personMarkup);
-	if (category == "pharmacy") {
-		newMarkup = personMarkup + 0.075;
-		console.log(newMarkup);
+additionalMarkup(category){
+	this.category = category;
+
+	if (this.category == "pharmacy") {
+		this.newMarkup = this.personMarkup + 0.075;
 	}
 
-	if (category == "food") {
-		newMarkup = personMarkup + 0.13;
-		console.log(newMarkup);
+	if (this.category == "food") {
+		this.newMarkup = this.personMarkup + 0.13;
 	}
 
-	if (category == "electronics") {
-		newMarkup = personMarkup + 0.02;
-		console.log(newMarkup);
-
+	if (this.category == "electronics") {
+		this.newMarkup = this.personMarkup + 0.02;
 	} 
+
 	else {
-	return newMarkup;
+	return this.newMarkup;
 	}
 }
 
 //this will take the currentSubtotal and apply the newMarkup, whith will return the total price of
 //the job. 
 newTotal() {
-	console.log(currentSubtotal * newMarkup);
-	totalPrice = currentSubtotal+currentSubtotal*newMarkup;
+	let totalPrice = this.currentSubtotal+this.currentSubtotal*this.newMarkup;
 	console.log(totalPrice);
 	return totalPrice;
 }

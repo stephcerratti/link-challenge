@@ -1,43 +1,46 @@
 let chai = require('chai');
 var expect = require('chai').expect;
-
-chai.should();
+let should = chai.should();
 
 let MarkupCalculator = require('../MarkupCalculator');
 
+let markup = new MarkupCalculator();
+
 describe('MarkupCalculator', () => {
   describe('#markup', () => {
-    let markup;
+    it('should return 1,591.58 when 3 people are working on the job with food', () => {
+      markup.newTotal()
+    })
 
-    beforeEach(() => {
-      MC = new MarkupCalculator();
-    });
+
+
+describe("categoryMarkup", () => {
+
+    it('should add 7.5% onto the new subtotal if the category is drugs or pharmaceuticals', () => {
+      markup.additionalMarkup('pharmacy').should.equal(0.075);
+    })
 
     it('should add 13% onto the new subtotal if the category is food', () => {
-      MC.additionalMarkup('food').should.equal(0.13)
-    })
-    // it('should add 7.5% onto the new subtotal if the category is drug or pharmaceutical', () => {
-    //   markup.basePrice.should.equal()
-    // })
-    // it('should add 2% onto the new subtotal if the category is electronic', () => {
-    //   markup.basePrice.should.equal()
-    // })
+      markup.additionalMarkup('food').should.equal(0.13);
+    });
 
-    it('should add nothing')
-})
+    it('should add 2% onto the new subtotal if the category is electronics', () => {
+      markup.additionalMarkup('electronics').should.equal(0.02);
+    })
+
+    it('should add nothing if it is from any other category', () => {
+      markup.additionalMarkup("").should.equal(0);
+    })
+    
 });
 
+  describe("addPersonMarkup", () => {
+    it('should add 1.2% for every perosn required on the job', () => {
+      markup.addPersonMarkup(3).should.equal(0.036);
+    })
+  });
 
-
-
-
- /***************** ADD PERSON MARKUP **************************/
-
- // describe('add person markup', function() {
- // 	it('should return 1.2% for each person on the job', function() {
- // 		let personMarkup = 3;
- // 		expect(3*0.012).to.be.equal(0.036.toFixed(3));
- // 	});
- // });
+});
+});
 
 
