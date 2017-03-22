@@ -14,7 +14,7 @@ To run the tests, please ensure the following versions are installed:
 
 Install by running npm install mocha chai --save-dev as well as npm install -g mocha to run in node.js in the command line of of this repository. 
 
-Please also ensure Babel is installed to compile to ES5. Run npm install --save-dev babel-core in the command line of this repository. 
+Please also ensure Babel is installed to transpile to ES5. Run npm install --save-dev babel-core in the command line of this repository. 
 
 To initiate the test, please run mocha test.js in the command line of the test folder of this repository.
 
